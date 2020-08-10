@@ -4,7 +4,7 @@ int main()
 {
 	int x = 0, y = 0, a = 0;
 	float av = 0, sd = 0, sum = 0, bsd = 0;
-	scanf("%d%d", &x, &y);
+	scanf_s("%d%d", &x, &y);
 	if (x > y) {
 		for (int i = x; i >= y; i--)
 		{
