@@ -1,38 +1,38 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
 int main()
- {
-	int x = 0, y = 0, a = 0;
-	float av = 0, sd = 0, sum = 0, bsd = 0;
-	scanf_s("%d%d", &x, &y);
-	if (x > y) {
-		for (int i = x; i >= y; i--)
+{
+	int a = 0, b = 0, c = 0;
+	float av = 0, sd = 0, sx = 0, sum = 0, bsd = 0;
+	scanf_s("%d%d", &a, &b);
+	if (a > b)
+	{
+		for (int i = a; i >= b; i--)
 		{
 			printf("%d ", i);
-			sum = sum + i;
-			a++;
-			bsd += (i * i);
+			sum += i;
+			c++;
+			sx += (i * i);
 		}
+		av = sum / c;
 		printf("\n");
-		av = sum / a;
-		a -= 1;
-		bsd /= a;
 	}
-	else {
-		for (int i = x; i <= y; i++) {
-			printf("%d ", i);
-			sum = sum + i;
-			a++;
-			bsd += (i * i);
+	else
+	{
+		for (int j = a; j <= b; j++)
+		{
+			printf("%d ", j);
+			sum += j;
+			c++;
+			sx += (j * j);
 		}
+		av = sum / c;
 		printf("\n");
-		av = sum / a;
-		a -= 1;
-		bsd /= a;
 	}
 	printf("Average = %.1f\n", av);
 	av *= av;
-	printf("SD = %.2f", sqrt(bsd - av));
-	printf("\n%d", a);
-	return 0;
+	av *= c;
+	bsd = sx - av;
+	bsd /= (c - 1);
+	printf("SD = %.2f", sqrt(bsd));
 }
