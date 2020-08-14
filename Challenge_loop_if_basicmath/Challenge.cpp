@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<math.h>
 int main()
-{
+ {
 	int x = 0, y = 0, a = 0;
 	float av = 0, sd = 0, sum = 0, bsd = 0;
 	scanf_s("%d%d", &x, &y);
@@ -15,6 +15,7 @@ int main()
 		}
 		printf("\n");
 		av = sum / a;
+		a -= 1;
 		bsd /= a;
 	}
 	else {
@@ -26,10 +27,12 @@ int main()
 		}
 		printf("\n");
 		av = sum / a;
+		a -= 1;
 		bsd /= a;
 	}
 	printf("Average = %.1f\n", av);
 	av *= av;
 	printf("SD = %.2f", sqrt(bsd - av));
+	printf("\n%d", a);
 	return 0;
 }
